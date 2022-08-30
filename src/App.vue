@@ -1,5 +1,6 @@
 <script setup>
 import {getAllCountries, getCountryByName} from './demo'
+import Country from './components/Country.vue'
 </script>
 <script>
   export default {
@@ -10,18 +11,21 @@ import {getAllCountries, getCountryByName} from './demo'
       }
     },
     beforeMount(){
-      this.countries = getAllCountries()
-      console.log(countries);
+    fetch('https://restcountries.com/v3.1/all')
+    .then(data=>data.json())
+    .then(res=>{
+        this.countries = res
+    })
     }
   }
 </script>
-
 <template>
-  <header>
+  <div :class="{app_light:!nightMode, app_dark:nightMode}">
+    <header>
     <h1>Where in the world?</h1>
     <div class="theme-btn">
       <i></i>
-      <h1>{{ nightMode ? 'Dark' : 'Light' }} Mode</h1>
+      <p>{{ nightMode ? 'Dark' : 'Light' }} Mode</p>
     </div>
   </header>
 
@@ -32,6 +36,7 @@ import {getAllCountries, getCountryByName} from './demo'
     </div>
 
     <select id="regions-filter">
+      <option seleced>Filter by Region</option>
       <option value="Africa">Africa</option>
       <option value="America">America</option>
       <option value="Asia">Asia</option>
@@ -42,7 +47,9 @@ import {getAllCountries, getCountryByName} from './demo'
 
 
   <div class="countries">
-    <country v-for="item in countries" />
+    <country v-for="item in countries" :props="item" />
+  </div>
+
   </div>
 
 </template>
