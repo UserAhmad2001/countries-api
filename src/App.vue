@@ -7,7 +7,8 @@ import Country from './components/Country.vue'
     data(){
       return {
         nightMode:true,
-        countries:[]
+        countries:[],
+        viewedCountries:[]
       }
     },
     beforeMount(){
@@ -15,7 +16,15 @@ import Country from './components/Country.vue'
     .then(data=>data.json())
     .then(res=>{
         this.countries = res
+        this.viewedCountries = res
     })
+    },
+    methods:{
+      searchCountry(ev){
+        this.viewedCountries = this.countries.filter((value,index,array)=>{
+          return value.name.official.toLowerCase().includes(ev.target.value.toLowerCase());
+        })
+      }
     }
   }
 </script>
@@ -32,7 +41,7 @@ import Country from './components/Country.vue'
   <section class="filter-sec">
     <div class="in">
       <i></i>
-      <input placeholder="Search for a country...">
+      <input :oninput="searchCountry" placeholder="Search for a country...">
     </div>
 
     <select id="regions-filter">
@@ -47,7 +56,7 @@ import Country from './components/Country.vue'
 
 
   <div class="countries">
-    <country v-for="item in countries" :props="item" />
+    <country v-for="item in viewedCountries" :props="item" />
   </div>
 
   </div>
