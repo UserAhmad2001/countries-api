@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import App_country from './AppCountry.vue'
 import '../scss/style.scss'
 
 /* Set up using Vue 3 */
@@ -22,3 +23,12 @@ library.add( faMagnifyingGlass, faSun, faMoon, faChevronDown )
 createApp(App)
 .component('font-awesome-icon', FontAwesomeIcon)
 .mount('#app')
+
+
+
+
+
+
+// createApp(App_country)
+// .component('font-awesome-icon', FontAwesomeIcon)
+// .mount('#app-country')

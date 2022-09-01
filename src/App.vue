@@ -1,6 +1,7 @@
 <script setup>
 import Country from './components/Country.vue'
 </script>
+
 <script>
   export default {
     data(){
@@ -32,6 +33,28 @@ import Country from './components/Country.vue'
             return val.region.toLowerCase().includes(ev.target.value.toLowerCase())
           })
         }
+      },
+      handleCountryClick(country){
+        localStorage.setItem('name',country.name.official)
+        localStorage.setItem('population',country.population)
+        localStorage.setItem('region',country.region)
+        localStorage.setItem('sub-region',country.subregion)
+        localStorage.setItem('capital',country.capital.join(','))
+        localStorage.setItem('img',country.flags.png)
+        localStorage.setItem('top-level-domain',country.tld.join(','))
+        localStorage.setItem('borders',country.borders.join(','))
+        // localStorage.setItem('currencies',Object.keys(country.currencies).map((key)=>{
+        //   return country.currencies[key]
+        // }).join(','))
+        // localStorage.setItem('languages',Object.keys(country.languages).map((key)=>{
+        //   return country.languages[key]
+        // }).join(','))
+        // localStorage.setItem('native-names',Object.keys(country.nativeName).map((key)=>{
+        //   return country.languages[key].common
+        // }).join(','))
+        
+        
+        window.location.replace('country.html');
       }
     }
   }
@@ -68,7 +91,9 @@ import Country from './components/Country.vue'
 
 
   <div class="countries">
-    <country v-for="item in viewedCountries" :props="item" />
+      <country v-for="item in viewedCountries" :props="item" 
+      @click="()=>{handleCountryClick(item)}" 
+      />
   </div>
 
   </div>
