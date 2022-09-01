@@ -1,0 +1,77 @@
+@use './variables' as *;
+
+
+.app_light{
+    background-color: $light-mode-bg;
+    header{
+        background-color: white;
+        h1{
+            color: $light-mode-txt;
+        }
+        .theme-btn{
+            .icon{
+                color: $light-mode-txt;
+            }
+            p{
+                color: $light-mode-txt;
+            }
+        }
+    }
+
+
+
+
+
+    .filter-sec{
+        .in{
+            background-color: white;
+            .icon{
+                color: $light-mode-input;
+            }
+            input{
+                color: $light-mode-input;
+            }
+        }
+
+
+        .select{
+            background-color: white;
+
+            .icon{
+                color: $light-mode-txt;
+            }
+
+
+            select{
+                color: $light-mode-txt;
+                option{
+                    color: $light-mode-txt;
+                    background-color: white;
+                }
+            }
+        }
+    }
+
+
+
+
+    .countries{
+        background-color: white;
+
+
+        .country{
+            background-color: white;
+
+
+            h1{
+                color: $light-mode-txt;
+            }
+        }
+    }
+
+
+
+
+}
+
+

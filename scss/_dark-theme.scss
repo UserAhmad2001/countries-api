@@ -1,0 +1,77 @@
+@use './variables' as *;
+
+
+.app_dark{
+    background-color: $dark-blue-2;
+    header{
+        background-color: $dark-blue-1;
+        h1{
+            color: $dark-mode-txt;
+        }
+        .theme-btn{
+            .icon{
+                color: $dark-mode-txt;
+                }
+            p{
+                color: $dark-mode-txt;
+                }
+        }
+    }
+
+
+
+
+
+    .filter-sec{
+        .in{
+            background-color: $dark-blue-1;
+            .icon{
+                color: $dark-mode-txt;
+            }
+            input{
+                color: $dark-mode-txt;
+            }
+        }
+
+
+        .select{
+            background-color: $dark-blue-1;
+
+            .icon{
+                color: $dark-mode-txt;
+            }
+
+
+            select{
+                color: $dark-mode-txt;
+                option{
+                    color: $dark-mode-txt;
+                    background-color: $dark-blue-1;
+                }
+            }
+        }
+    }
+
+
+
+
+    .countries{
+        background-color: $dark-blue-2;
+        
+
+        .country{
+            background-color: $dark-blue-1;
+
+
+            h1{
+                color: $dark-mode-txt;
+            }
+        }
+    }
+
+
+
+
+}
+
+
