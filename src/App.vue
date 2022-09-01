@@ -24,6 +24,15 @@ import Country from './components/Country.vue'
         this.viewedCountries = this.countries.filter((value,index,array)=>{
           return value.name.official.toLowerCase().includes(ev.target.value.toLowerCase());
         })
+      },
+      regionFilterClick(ev){
+        if(ev.target.value === 'Filter by Region'){
+          this.viewedCountries = this.countries
+        }else{
+          this.viewedCountries = this.countries.filter((val,ind,arr)=>{
+            return val.region.toLowerCase().includes(ev.target.value.toLowerCase())
+          })
+        }
       }
     }
   }
@@ -33,18 +42,18 @@ import Country from './components/Country.vue'
     <header>
     <h1>Where in the world?</h1>
     <div class="theme-btn">
-      <i></i>
+      <font-awesome-icon :icon=" nightMode ? ['fab', 'faMoon']:['fab', 'faSun']"   />
       <p>{{ nightMode ? 'Dark' : 'Light' }} Mode</p>
     </div>
   </header>
 
   <section class="filter-sec">
     <div class="in">
-      <i></i>
+      <font-awesome-icon :icon="['fab', 'faMagnifyingGlass']"  />
       <input :oninput="searchCountry" placeholder="Search for a country...">
     </div>
 
-    <select id="regions-filter">
+    <select @change="regionFilterClick" id="regions-filter">
       <option seleced>Filter by Region</option>
       <option value="Africa">Africa</option>
       <option value="America">America</option>

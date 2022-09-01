@@ -43,6 +43,7 @@
                 padding: 1rem 0;
                 border: none;
                 outline: none;
+                text-indent: 1rem;
                 &:hover,:focus{
                     border: none;
                     outline: none;
@@ -58,6 +59,7 @@
             &:focus,:active{
                 outline: none;
             }
+
         }
     }
 
