@@ -35,25 +35,34 @@ import Country from './components/Country.vue'
         }
       },
       handleCountryClick(country){
+        
+        let currencies = Object.keys(country.currencies)
+        .map((key,index,array)=>{
+          return country.currencies[key].name
+        }).join(', ')
+        
+        let languages = Object.keys(country.languages)
+        .map((key,index,array)=>{
+          return country.languages[key]
+        }).join(', ')
+        
+        let nativeName = Object.keys(country.name.nativeName)
+        .map((key,index,array)=>{
+          return country.name.nativeName[key].common
+        }).join(', ')
+        
         localStorage.setItem('name',country.name.official)
         localStorage.setItem('population',country.population)
         localStorage.setItem('region',country.region)
         localStorage.setItem('sub-region',country.subregion)
-        localStorage.setItem('capital',country.capital.join(','))
+        localStorage.setItem('capital',country.capital)
         localStorage.setItem('img',country.flags.png)
-        localStorage.setItem('top-level-domain',country.tld.join(','))
-        localStorage.setItem('borders',country.borders.join(','))
-        // localStorage.setItem('currencies',Object.keys(country.currencies).map((key)=>{
-        //   return country.currencies[key]
-        // }).join(','))
-        // localStorage.setItem('languages',Object.keys(country.languages).map((key)=>{
-        //   return country.languages[key]
-        // }).join(','))
-        // localStorage.setItem('native-names',Object.keys(country.nativeName).map((key)=>{
-        //   return country.languages[key].common
-        // }).join(','))
-        
-        
+        localStorage.setItem('top-level-domain',country.tld)
+        localStorage.setItem('borders',country.borders)
+        localStorage.setItem('currencies', currencies)
+        localStorage.setItem('languages', languages)
+        localStorage.setItem('native-names',nativeName)
+                  
         window.location.replace('country.html');
       }
     }

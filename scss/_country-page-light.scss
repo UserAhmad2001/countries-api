@@ -1,0 +1,20 @@
+@use './variables' as *;
+
+.countryPageLight{
+    background-color: $light-mode-bg;
+
+    header{
+        background-color: white;
+    }
+
+    .back-btn{
+        background-color: white;
+    }
+
+
+    .border-countries{
+        p{
+            background-color: white;
+        }
+    }
+}

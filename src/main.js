@@ -11,10 +11,10 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { faMagnifyingGlass, faSun, faMoon, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass, faArrowLeftLong, faSun, faMoon, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 /* add icons to the library */
-library.add( faMagnifyingGlass, faSun, faMoon, faChevronDown )
+library.add( faMagnifyingGlass, faArrowLeftLong, faSun, faMoon, faChevronDown )
 
 
 
@@ -26,9 +26,6 @@ createApp(App)
 
 
 
-
-
-
-// createApp(App_country)
-// .component('font-awesome-icon', FontAwesomeIcon)
-// .mount('#app-country')
+createApp(App_country)
+.component('font-awesome-icon', FontAwesomeIcon)
+.mount('#app-country')

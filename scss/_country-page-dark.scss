@@ -1,0 +1,36 @@
+@use './variables' as *;
+
+
+.countryPageDark{
+    background-color: $dark-blue-2;
+    color: $dark-mode-txt;
+    header{
+        color: $dark-mode-txt;
+        background-color: $dark-blue-1;
+    }
+
+    .back-btn{
+        background-color: $dark-blue-1;
+        color: $dark-mode-txt;
+    }
+
+    .info{
+        background-color: $dark-blue-2;
+    }
+
+    .info .info-txt {
+        .g1,.g2{
+            h2 p{
+                color: hsl(0, 0%, 80%);
+            }
+        }
+    }
+
+
+
+    .border-countries{
+        p{
+            background-color: $dark-blue-1;
+        }
+    }
+}
