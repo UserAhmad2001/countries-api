@@ -17,7 +17,7 @@ import Country from './components/Country.vue'
     .then(res=>{
         this.countries = res
         this.viewedCountries = res
-    })
+    }).catch(err=>console.log(err))
     },
     methods:{
       searchCountry(ev){
@@ -65,11 +65,20 @@ import Country from './components/Country.vue'
                   
         window.location.replace('country.html');
       }
+    },
+    computed:{
+      mode(){
+        if(this.nightMode){
+          return 'app_dark'
+        }else{
+          return 'app_light'
+        }
+      }
     }
   }
 </script>
 <template>
-  <div :class="{app_light:!nightMode, app_dark:nightMode}">
+  <div :class="mode">
     <header>
     <h1>Where in the world?</h1>
     <div @click="()=>{this.nightMode = !this.nightMode}" class="theme-btn">

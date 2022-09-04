@@ -1,6 +1,7 @@
 {
   "name": "vue-project",
   "version": "0.0.0",
+  "homepage": "https://UserAhmad2001.github.io/vite-project",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
