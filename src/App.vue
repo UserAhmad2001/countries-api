@@ -66,22 +66,14 @@ import Country from './components/Country.vue'
         window.location.replace('country.html');
       }
     },
-    computed:{
-      mode(){
-        if(this.nightMode){
-          return 'app_dark'
-        }else{
-          return 'app_light'
-        }
-      }
-    }
+    
   }
 </script>
 <template>
-  <div :class="mode">
+  <div :class="{app_dark:nightMode,app_light:!nightMode}">
     <header>
     <h1>Where in the world?</h1>
-    <div @click="()=>{this.nightMode = !this.nightMode}" class="theme-btn">
+    <div @click="()=>{nightMode = !nightMode}" class="theme-btn">
       <font-awesome-icon class="icon" :icon=" nightMode ? ['fas', 'moon']:['fas', 'sun']"   />
       <p>{{ nightMode ? 'Dark' : 'Light' }} Mode</p>
     </div>

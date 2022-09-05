@@ -64,7 +64,7 @@
         padding-left: 4%;
 
         img{
-            flex-basis: 50%;
+            flex-basis: 45%;
             object-fit: contain;
             margin-right: 3rem;
         }
@@ -73,7 +73,7 @@
         .info-txt{
             display: grid;
             grid-template-columns: repeat(2, minmax(4rem,1fr));
-            flex-basis: 50%;
+            flex-basis: 55%;
 
             .name{
                 grid-column: span 2;
