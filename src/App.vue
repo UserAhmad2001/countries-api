@@ -63,7 +63,7 @@ import Country from './components/Country.vue'
         localStorage.setItem('languages', languages)
         localStorage.setItem('native-names',nativeName)
                   
-        window.location.replace('country.html');
+        window.location.replace('country/country.html');
       }
     },
     
